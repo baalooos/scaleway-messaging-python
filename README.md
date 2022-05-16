@@ -16,7 +16,7 @@ For this tutorial you will need:
 You also need to:
 
 - Set your Scaleway token's secret key in the environment variable: **SCW_SECRET_KEY**. For more information you can refer to [the official Scaleway documentation](https://www.scaleway.com/en/docs/console/my-project/how-to/generate-api-key/)
-- Set the id of the Scaleway project you want to use in the environment variable: **SCW_PROJECT_ID**. For more information you can refer to [the Scaleway CLI documentation](https://github.com/scaleway/scaleway-cli/blob/master/docs/commands/config.md)
+- Set the id of the Scaleway project you want to use in the environment variable: **SCW_DEFAULT_PROJECT_ID**. For more information you can refer to [the Scaleway CLI documentation](https://github.com/scaleway/scaleway-cli/blob/master/docs/commands/config.md)
 
 ## Create your Scaleway Messaging Namespace
 
@@ -30,7 +30,7 @@ curl -s --request POST 'https://api.scaleway.com/mnq/v1alpha1/regions/fr-par/nam
     --header 'X-Auth-Token: '$SCW_SECRET_KEY \
     --data-raw '{
         "name": "nats-broker",
-        "project_id": "'$SCW_PROJECT_ID'",
+        "project_id": "'$SCW_DEFAULT_PROJECT_ID'",
         "protocol": "nats"
     }' | tee nats-broker.json
 ```
