@@ -80,18 +80,8 @@ XXX
 
 ## Run the scripts
 
-Modify the 2 scripts `pub.py` and `sub.py`. You must change the following line:
+Open 2 differents terminal. In the first one, run `python3 sub.py "endpoint_url"`, where endpoint is the endpoint in the `nats-broker.json` file.
 
-```python
-options = {
-        "servers": ["nats://IP:4222"],
-        "user_credentials": "nats.creds"
-    }
-```
-
-Replace `IP` with the IP you'll find in the `nats-broker.json` file, it's the endpoint's IP.
-
-Open 2 differents terminal. In the first one, run `python3 sub.py`.
 You should see an output and then the script awaits new messages.
 
 ```bash
@@ -100,7 +90,7 @@ Subscribing
 Subscription OK
 ```
 
-In the second terminal, run `python3 pub.py`
+In the second terminal, run `python3 pub.py "endpoint_url"`, where endpoint is the endpoint in the `nats-broker.json` file.
 You should see 2 output in the first terminal:
 
 ```bash

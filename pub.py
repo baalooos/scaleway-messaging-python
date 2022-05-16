@@ -1,5 +1,5 @@
 import asyncio
-
+import sys
 from nats.aio.client import Client as NATS
 
 async def main():
@@ -7,7 +7,7 @@ async def main():
 
     # Modify this with your informations
     options = {
-        "servers": ["nats://IP:4222"],
+        "servers": [sys.argv[1]],
         "user_credentials": "nats.creds"
     }
 
